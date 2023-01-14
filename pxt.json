@@ -1,0 +1,34 @@
+{
+    "name": "contraption-renderer",
+    "description": "",
+    "dependencies": {
+        "device": "*"
+    },
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md",
+        "assets.json",
+        "rasterizer.ts",
+        "util.ts",
+        "command.ts",
+        "vertex.ts",
+        "equation.ts",
+        "data.ts",
+        "vertexShader.ts",
+        "pixelShader.ts",
+        "consts.ts",
+        "renderer.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "targetVersions": {
+        "target": "1.12.7",
+        "targetId": "arcade"
+    },
+    "supportedTargets": [
+        "arcade"
+    ],
+    "preferredEditor": "tsprj"
+}
