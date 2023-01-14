@@ -56,6 +56,7 @@ tri0.v2.props[0] = 1; tri0.v2.props[1] = 1;
 tri1.v0.props[0] = 1; tri1.v0.props[1] = 1;
 tri1.v1.props[0] = 0; tri1.v1.props[1] = 1;
 tri1.v2.props[0] = 0; tri1.v2.props[1] = 0;
+
 // set verts - tri 0
 tri0.v0.x = 32; tri0.v0.y = 32;
 tri0.v1.x = 100; tri0.v1.y = 32;
