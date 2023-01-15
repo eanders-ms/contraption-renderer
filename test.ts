@@ -65,23 +65,21 @@ tri1.v2.props[0] = 0; tri1.v2.props[1] = 0;
 const ev = control.pushEventContext();
 ev.registerFrameHandler(UPDATE_PRIORITY, () => {
     const t = control.millis() / 100;
-    s = Math.sin(t) * 10;
-    c = Math.cos(t) * 10;
+    s = Math.sin(t / 2.13) * 10;
+    c = Math.cos(t / 2.41) * 10;
     // set verts - tri 0
-    tri0.v0.x = s + 32; tri0.v0.y = 32;
-    tri0.v1.x = s + 100; tri0.v1.y = 32;
-    tri0.v2.x = c + 100; tri0.v2.y = 100;
+    tri0.v0.x = 32 - s; tri0.v0.y = 32 + c;
+    tri0.v1.x = 100 + s; tri0.v1.y = 32 - s;
+    tri0.v2.x = 100 + c; tri0.v2.y = 100 - c;
     // set verts - tri 1
-    tri1.v0.x = c + 100; tri1.v0.y = 100;
-    tri1.v1.x = c + 32; tri1.v1.y = 100;
-    tri1.v2.x = s + 32; tri1.v2.y = 32;
+    tri1.v0.x = 100 + c; tri1.v0.y = 100 - c;
+    tri1.v1.x = 32 + c; tri1.v1.y = 100 + c;
+    tri1.v2.x = 32 - s; tri1.v2.y = 32 + c;
 });
 ev.registerFrameHandler(RENDER_PRIORITY, () => {
     screen.fill(12);
     renderer.enqueueDrawCommand(tri0);
     renderer.enqueueDrawCommand(tri1);
 });
-ev.registerFrameHandler(RASTERIZER_PRIORITY, () => {
-    renderer.render();
-});
+ev.registerFrameHandler(RASTERIZER_PRIORITY, () => renderer.render());
 ev.registerFrameHandler(UPDATE_SCREEN_PRIORITY, control.__screen.update);
